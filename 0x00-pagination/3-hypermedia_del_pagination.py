@@ -8,7 +8,8 @@ from typing import List, Dict
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """
+    Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -50,5 +51,7 @@ class Server:
             'index': index,
             'next_index': next_index,
             'page_size': page_size,
-            'data': [dataset[i] for i in range(index, next_index) if i in dataset]
+            'data': [
+                dataset[i] for i in range(index, next_index)if i in dataset
+            ]
         }
