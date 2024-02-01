@@ -21,7 +21,8 @@ class LFUCache(BaseCaching):
             else:
                 if len(self.cache_data) >= self.MAX_ITEMS:
                     min_count = min(self.count.values())
-                    min_keys = [k for k in self.count if self.count[k] == min_count]
+                    min_keys = [k for k in self.count
+                                if self.count[k] == min_count]
                     for k in min_keys:
                         del self.cache_data[k]
                         del self.count[k]
