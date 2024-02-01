@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""LRU caching"""
+"""MRU caching"""
 
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class LRUCache(BaseCaching):
-    """LIFO caching"""
+class MRUCache(BaseCaching):
+    """MRU caching"""
     def __init__(self):
         """Initialize"""
         super().__init__()
@@ -19,7 +19,7 @@ class LRUCache(BaseCaching):
                 self.queue.remove(key)
             else:
                 if len(self.cache_data) >= self.MAX_ITEMS:
-                    last = self.queue.pop(0)
+                    last = self.queue.pop()
                     del self.cache_data[last]
                     print("DISCARD:", last)
                 self.queue.append(key)
