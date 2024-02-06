@@ -61,7 +61,9 @@ def get_locale():
     Select and return best language match based on supported languages
     """
     supported_languages = app.config['LANGUAGES']
-    preferred_locales = [request.args.get('locale'), g.user.get('locale'), request.headers.get('locale')]
+    preferred_locales = [request.args.get('locale'),
+                         g.user.get('locale'),
+                         request.headers.get('locale')]
     for locale in preferred_locales:
         if locale in supported_languages:
             return locale
