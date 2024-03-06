@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 const { expect } = require('chai');
 const kue = require('kue');
-const createPushNotificationsJobs = require('../createPushNotificationsJobs');
+const createPushNotificationsJobs = require('./8-job');
 
 describe('createPushNotificationsJobs', () => {
   let queue;
